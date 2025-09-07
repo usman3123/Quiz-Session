@@ -48,11 +48,6 @@ let curentquestionindex = 0;
 let score = 0;
 
 function startquiz() {
-    playerName = prompt("Enter your name:");
-    if (!playerName || playerName.trim() === "") {
-        alert("⚠️ Please enter your name to start the quiz!");
-        return; 
-    }
     curentquestionindex = 0;
     score = 0;
     next.innerHTML = "Next";
@@ -171,3 +166,25 @@ userScores.forEach((item, index) => {
 }
 
 fetchScores();
+
+
+function askName() {
+    document.getElementById("customPopup").style.display = "flex";
+}
+
+function saveName() {
+    const input = document.getElementById("nameInput").value.trim();
+    if (!input) {
+        alert("⚠️ Please enter your name!");
+        return;
+    }
+    playerName = input;
+    document.getElementById("customPopup").style.display = "none";
+    startquiz(); // quiz start hogi
+}
+
+
+window.onload = () => {
+    askName();
+};
+
