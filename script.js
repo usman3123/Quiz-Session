@@ -108,7 +108,8 @@ function showscore() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             name: playerName,   // Ya dynamic bhi ho sakta hai
-            score: score
+            score: score,
+            date: new Date().toISOString()
         })
     })
         .then(res => res.json())
