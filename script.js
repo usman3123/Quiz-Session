@@ -41,11 +41,18 @@ const question = document.querySelector(".question");
 const allanswers = document.querySelector(".answers");
 const next = document.querySelector(".fornext");
 const leaderboard = document.getElementById("leaderboard");
+let playerName = "";
+
 
 let curentquestionindex = 0;
 let score = 0;
 
 function startquiz() {
+    playerName = prompt("Enter your name:");
+    if (!playerName || playerName.trim() === "") {
+        alert("⚠️ Please enter your name to start the quiz!");
+        return; 
+    }
     curentquestionindex = 0;
     score = 0;
     next.innerHTML = "Next";
@@ -105,7 +112,7 @@ function showscore() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: "Usman",   // Ya dynamic bhi ho sakta hai
+            name: playerName,   // Ya dynamic bhi ho sakta hai
             score: score
         })
     })
@@ -145,11 +152,19 @@ async function fetchScores() {
 
         leaderboard.innerHTML = "";
 
-        data.forEach((item, index) => {
-            const li = document.createElement("li");
-            li.textContent = `${index + 1}. ${item.name} - ${item.score} points - ${item.date}`;
-            leaderboard.appendChild(li);
-        });
+        const userScores = data.filter(item => item.name === playerName);
+
+if (userScores.length === 0) {
+    leaderboard.innerHTML = "<li>No records found for you yet.</li>";
+    return;
+}
+
+userScores.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${index + 1}. ${item.name} - ${item.score} points - ${item.date}`;
+    leaderboard.appendChild(li);
+});
+
     } catch (err) {
         console.error("Error fetching scores:", err);
     }
