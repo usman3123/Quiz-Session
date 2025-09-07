@@ -1,13 +1,13 @@
 let array = [
    {
-        question: "کون سا صحابی نبی ﷺ کے سب سے قریبی رشتہ دار تھے اور ابتدائی اسلام قبول کرنے والوں میں شامل تھے؟",
+        question: "سب سے پہلا معجزہ نبی ﷺ کے زمانے میں کیا ہوا تھا؟",
         answers: [
-            { text: "ابو بکر صدیق", correct: "False" },
-            { text: "علی بن ابی طالب", correct: "True" },
-            { text: "عثمان بن عفان", correct: "False" },
-            { text: "حمزہ بن عبدالمطلب", correct: "False" }
+            { text: "قمر کی تقسیم", correct: "False" },
+            { text: "آتش فشاں روکنا", correct: "False" },
+            { text: "آب زمزم کا نکلنا", correct: "False" },
+            { text: "ہاتھ سے روشنی کا نکلنا", correct: "True" }
         ]
-   },    
+    },    
     {
         question: "کون سا صحابی سب سے پہلے قرآن کو مکمل حفظ کرنے والا تھا؟",
         answers: [
