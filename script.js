@@ -97,17 +97,21 @@ function showscore() {
     next.style.display = "block"
 
     // ✅ Backend pe score bhejna
-    fetch("http://quiz-session-backend-production.up.railway.app/scores", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            name: "Usman",   
-            score: score
-        })
+   fetch("https://quiz-session-backend-production.up.railway.app/save-score", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        name: "Usman",   // ya user ka naam dynamically le sakte ho
+        score: score
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.error(err));
+})
+.then(res => res.json())
+.then(data => {
+    console.log("Score saved:", data);
+    fetchScores();
+})
+.catch(err => console.error("Error saving score:", err));
+
 }
 
 function handlenextbutton() {
@@ -139,7 +143,7 @@ async function fetchScores() {
 
     data.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${index + 1}. ${item.username} - ${item.score} points - ${item.date}`;
+      li.textContent = `${index + 1}. ${item.name} - ${item.score} points - ${item.date}`;
       leaderboard.appendChild(li);
     });
   } catch (err) {
