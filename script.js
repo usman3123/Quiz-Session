@@ -97,12 +97,22 @@ function showscore() {
     next.style.display = "block"
 
     // ✅ Backend pe score bhejna
+<<<<<<< HEAD
    fetch("https://quiz-session-backend-production.up.railway.app/save-score", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
         name: "Usman",   // ya user ka naam dynamically le sakte ho
         score: score
+=======
+    fetch("http://quiz-session-backend-production.up.railway.app/scores", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: "Usman",   
+            score: score
+        })
+>>>>>>> f14f03a72e92fcee46f2b0901332c1e3287ee2c7
     })
 })
 .then(res => res.json())
