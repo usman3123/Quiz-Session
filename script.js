@@ -101,7 +101,7 @@ function showscore() {
     next.style.display = "block";
 
     // ✅ Backend pe score bhejna
-    fetch("https://quiz-session-backend-production.up.railway.app/save-score", {
+    fetch(`${backendURL}/save-score`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
