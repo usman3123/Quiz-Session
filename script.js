@@ -107,9 +107,13 @@ function showscore() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: playerName,   // Ya dynamic bhi ho sakta hai
+            name: playerName,  
             score: score,
-            date: new Date().toISOString()
+            body: JSON.stringify({
+            name: playerName,
+            score: score
+        })
+
         })
     })
         .then(res => res.json())
