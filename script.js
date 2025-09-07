@@ -126,3 +126,26 @@ next.addEventListener("click",()=> {
     }
 })
 startquiz()
+const leaderboard = document.getElementById("leaderboard");
+
+const backendURL = "https://quiz-session-backend-production.up.railway.app";
+
+async function fetchScores() {
+  try {
+    const res = await fetch(`${backendURL}/scores`);
+    const data = await res.json();
+
+    leaderboard.innerHTML = "";
+
+    data.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${index + 1}. ${item.username} - ${item.score} points - ${item.date}`;
+      leaderboard.appendChild(li);
+    });
+  } catch (err) {
+    console.error("Error fetching scores:", err);
+  }
+}
+
+fetchScores();
+
