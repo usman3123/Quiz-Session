@@ -1,38 +1,38 @@
 let array = [
    {
-        question: "سب سے پہلا معجزہ نبی ﷺ کے زمانے میں کیا ہوا تھا؟",
+        question: "سب سے پہلے قرآن میں نازل ہونے والا لفظ کون سا تھا؟",
         answers: [
-            { text: "قمر کی تقسیم", correct: "False" },
-            { text: "آتش فشاں روکنا", correct: "False" },
-            { text: "آب زمزم کا نکلنا", correct: "False" },
-            { text: "ہاتھ سے روشنی کا نکلنا", correct: "True" }
-        ]
-    },    
-    {
-        question: "کون سا صحابی سب سے پہلے قرآن کو مکمل حفظ کرنے والا تھا؟",
-        answers: [
-            { text: "ابو بکر صدیق", correct: "False" },
-            { text: "زید بن ثابت", correct: "True" },
-            { text: "علی بن ابی طالب", correct: "False" },
-            { text: "عثمان بن عفان", correct: "False" }
+            { text: "اقْرَأْ", correct: "True" },
+            { text: "بسم اللہ", correct: "False" },
+            { text: "الحمدللہ", correct: "False" },
+            { text: "اَللہُ اَکبر", correct: "False" }
         ]
     },
     {
-        question: "نبی ﷺ نے سب سے پہلا حج کس سال کیا؟",
+        question: "پیغمبر ﷺ کی سب سے پہلی بیٹی کون تھیں؟",
         answers: [
-            { text: "9 ہجری", correct: "True" },
-            { text: "10 ہجری", correct: "False" },
-            { text: "8 ہجری", correct: "False" },
-            { text: "11 ہجری", correct: "False" }
+            { text: "فاطمہ رضی اللہ عنہا", correct: "False" },
+            { text: "رقیہ رضی اللہ عنہا", correct: "False" },
+            { text: "زینب رضی اللہ عنہا", correct: "True" },
+            { text: "ام کلثوم رضی اللہ عنہا", correct: "False" }
         ]
     },
     {
-        question: "سب سے پہلے اسلام قبول کرنے والی خاتون کون تھیں؟",
+        question: "سب سے طویل آیت قرآن میں کون سی ہے؟",
         answers: [
-            { text: "حضرت عائشہ رضی اللہ عنہا", correct: "False" },
-            { text: "حضرت خدیجہ رضی اللہ عنہا", correct: "True" },
-            { text: "حضرت فاطمہ رضی اللہ عنہا", correct: "False" },
-            { text: "حضرت حفصہ رضی اللہ عنہا", correct: "False" }
+            { text: "آیت نمبر 282 سورۃ البقرہ", correct: "True" },
+            { text: "آیتُ الکرسی", correct: "False" },
+            { text: "آیتُ الکافرون", correct: "False" },
+            { text: "آیتُ الاخلاص", correct: "False" }
+        ]
+    },
+    {
+        question: "سب سے پہلا معاہدہ مسلمانوں نے کس کے ساتھ کیا تھا؟",
+        answers: [
+            { text: "اہل یثرب", correct: "False" },
+            { text: "قریش", correct: "False" },
+            { text: "اہل حدیبیہ", correct: "True" },
+            { text: "اہل مکہ", correct: "False" }
         ]
     }
 ];
@@ -100,7 +100,7 @@ function showscore() {
     resetstate();
     question.innerHTML = `You Scored ${score} out of ${array.length} !`;
     next.innerHTML = "Restart";
-    next.style.display = "block";
+    next.style.display = "none";
 
     // ✅ Backend pe score bhejna
     fetch(`${backendURL}/save-score`, {
@@ -181,7 +181,7 @@ function askName() {
 function saveName() {
     const input = document.getElementById("nameInput").value.trim();
     if (!input) {
-        alert("⚠️ Please enter your name!");
+        alert("⚠️ Please enter your full name!");
         return;
     }
     playerName = input;
