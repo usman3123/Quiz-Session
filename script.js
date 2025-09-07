@@ -1,38 +1,38 @@
 let array = [
-    {
-        question: "What is your name?",
+   {
+        question: "کون سا صحابی نبی ﷺ کے سب سے قریبی رشتہ دار تھے اور ابتدائی اسلام قبول کرنے والوں میں شامل تھے؟",
         answers: [
-            { text: "Umer", correct: "False" },
-            { text: "Hassaan", correct: "False" },
-            { text: "Ahmad", correct: "False" },
-            { text: "Talha", correct: "True" },
+            { text: "ابو بکر صدیق", correct: "False" },
+            { text: "علی بن ابی طالب", correct: "True" },
+            { text: "عثمان بن عفان", correct: "False" },
+            { text: "حمزہ بن عبدالمطلب", correct: "False" }
+        ]
+   },    
+    {
+        question: "کون سا صحابی سب سے پہلے قرآن کو مکمل حفظ کرنے والا تھا؟",
+        answers: [
+            { text: "ابو بکر صدیق", correct: "False" },
+            { text: "زید بن ثابت", correct: "True" },
+            { text: "علی بن ابی طالب", correct: "False" },
+            { text: "عثمان بن عفان", correct: "False" }
         ]
     },
     {
-        question: "What is your name?",
+        question: "نبی ﷺ نے سب سے پہلا حج کس سال کیا؟",
         answers: [
-            { text: "Umer", correct: "False" },
-            { text: "Hassaan", correct: "True" },
-            { text: "Ahmad", correct: "False" },
-            { text: "Talha", correct: "False" },
+            { text: "9 ہجری", correct: "True" },
+            { text: "10 ہجری", correct: "False" },
+            { text: "8 ہجری", correct: "False" },
+            { text: "11 ہجری", correct: "False" }
         ]
     },
     {
-        question: "What is your name?",
+        question: "سب سے پہلے اسلام قبول کرنے والی خاتون کون تھیں؟",
         answers: [
-            { text: "Umer", correct: "True" },
-            { text: "Hassaan", correct: "False" },
-            { text: "Ahmad", correct: "False" },
-            { text: "Talha", correct: "False" },
-        ]
-    },
-    {
-        question: "What is your name?",
-        answers: [
-            { text: "Umer", correct: "False" },
-            { text: "Hassaan", correct: "False" },
-            { text: "Ahmad", correct: "True" },
-            { text: "Talha", correct: "False" },
+            { text: "حضرت عائشہ رضی اللہ عنہا", correct: "False" },
+            { text: "حضرت خدیجہ رضی اللہ عنہا", correct: "True" },
+            { text: "حضرت فاطمہ رضی اللہ عنہا", correct: "False" },
+            { text: "حضرت حفصہ رضی اللہ عنہا", correct: "False" }
         ]
     }
 ];
