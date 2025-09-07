@@ -147,10 +147,10 @@ async function fetchScores() {
 
         leaderboard.innerHTML = "";
 
-        const userScores = data.filter(item => item.name === playerName);
+const userScores = data.filter(item => item.name.toLowerCase() === playerName.toLowerCase());
 
 if (userScores.length === 0) {
-    leaderboard.innerHTML = "<li>No records found for you yet.</li>";
+    leaderboard.innerHTML = `<li>No records found yet for "${playerName}".</li>`;
     return;
 }
 
@@ -159,6 +159,7 @@ userScores.forEach((item, index) => {
     li.textContent = `${index + 1}. ${item.name} - ${item.score} points - ${item.date}`;
     leaderboard.appendChild(li);
 });
+
 
     } catch (err) {
         console.error("Error fetching scores:", err);
@@ -180,7 +181,7 @@ function saveName() {
     }
     playerName = input;
     document.getElementById("customPopup").style.display = "none";
-    startquiz(); // quiz start hogi
+    startquiz();
 }
 
 
